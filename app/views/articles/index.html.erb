@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1 class="text-center">Articles</h1>
+  <div class="text-center">
+    <%= link_to "New article", new_article_path, class: "btn btn-primary m-3" %>
+  </div>
+  <div id="articles" class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-4">
+        <div class="card mb-4 bg-light">
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text"><%= article.content %></p>
+            <div class="d-flex justify-content-end"> 
+              <%= link_to "Show this article", article, class: "btn btn-primary m-2" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
